@@ -1,6 +1,6 @@
 # space_invaders_1.0
 
-This is a space invader clone is a tutorial project found in Python Crash Course 3rd edition by E. Matthes [1]. The purpose of following this tutorial was to familiarize myself with how to structure a python project and learn abit about pygame.
+This space invader clone is a tutorial project found in Python Crash Course 3rd edition by E. Matthes [1]. The purpose of following this tutorial was to familiarize myself with how to structure a python project and learn abit about pygame.
 
 # Features I added to the project
 
