@@ -18,6 +18,8 @@ class AlienInvasion:
     def __init__(self):
         """Initialize the game, and create game resources."""
         pygame.init()
+        self.bullet_sound = pygame.mixer.Sound("sounds/pew.wav")
+        self.explosion_sound = pygame.mixer.Sound("sounds/explosion.wav")
         self.clock = pygame.time.Clock()
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_width ,self.settings.screen_height))
@@ -117,6 +119,8 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            pygame.mixer.Sound.play(self.bullet_sound)
+         
     
     def _update_bullets(self):
         """Update position of the bullets and get rid of old bullets."""
@@ -141,6 +145,7 @@ class AlienInvasion:
                 self.stats.score +=self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+            pygame.mixer.Sound.play(self.explosion_sound)
         
         if not self.aliens:
             # Destroy existing bullets and create new fleet.
